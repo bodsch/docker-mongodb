@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker build --tag bodsch/docker-graphite .
+  - docker run --detach --name graphite bodsch/docker-graphite
+
+script:
+  - docker ps | grep -q graphite
+

@@ -1,0 +1,8 @@
+PORTS = \
+  --publish 11211:11211
+
+# VOLUMES = \
+#  --volume \
+
+# ENV = \
+#  --env \
