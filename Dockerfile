@@ -9,7 +9,7 @@ ENV \
   TERM=xterm \
   BUILD_DATE="2017-07-13" \
   VERSION="3.4.4"
-  
+
 EXPOSE 27017 27018 27019 28017
 
 LABEL \
@@ -34,12 +34,15 @@ RUN \
   apk --no-cache upgrade && \
   apk --no-cache add \
     mongodb && \
+  mkdir -vp /data/db && \
   rm -rf \
     /tmp/* \
     /var/cache/apk/*
 
+VOLUME [ "/data" ]
+
 ENTRYPOINT [ "mongod" ]
 
-CMD [ "smallfiles", "oplogSize", "128", "replSet", "rs0" ]
+CMD [ "--smallfiles", "--oplogSize", "128" , "--replSet", "rs0" ]
 
 # EOF

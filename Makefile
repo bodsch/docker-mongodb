@@ -50,7 +50,7 @@ run:
 		$(VOLUMES) \
 		$(ENV) \
 		$(NS)/$(REPO):$(VERSION) \
-		-l 0.0.0.0 -m 16 -u mongodb
+		--smallfiles --oplogSize 128 --replSet rs0 --dbpath /srv/mongodb --rest --httpinterface
 
 exec:
 	docker exec \

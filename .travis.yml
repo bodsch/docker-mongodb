@@ -4,9 +4,9 @@ services:
   - docker
 
 install:
-  - docker build --tag bodsch/docker-graphite .
-  - docker run --detach --name graphite bodsch/docker-graphite
+  - docker build --tag bodsch/docker-mongodb .
+  - docker run --detach --name mongodb bodsch/docker-mongodb
 
 script:
-  - docker ps | grep -q graphite
+  - docker ps | grep -q mongodb
 

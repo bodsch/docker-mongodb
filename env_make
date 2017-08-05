@@ -1,8 +1,12 @@
 PORTS = \
-  --publish 11211:11211
+  --publish 27017:27017 \
+  --publish 27018:27018 \
+  --publish 27019:27019 \
+  --publish 28017:28017
 
-# VOLUMES = \
-#  --volume \
+VOLUMES = \
+  --volume /var/log/docker:/var/log \
+  --volume /tmp/docker-data:/srv/mongodb
 
 # ENV = \
-#  --env \
+#  --env VAR=value
